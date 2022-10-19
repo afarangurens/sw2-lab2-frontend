@@ -1,10 +1,12 @@
 <template>
+  <div class="container-fluid">
   <div class="col-12 text-center">
     <h2 class="text-primary"><b>Mis Roles</b></h2>
     <br>
     <div v-for="role in roles" :key="role.id">
       <h3>{{ role.roleName }}</h3>
     </div>
+  </div>
   </div>
 </template>
 

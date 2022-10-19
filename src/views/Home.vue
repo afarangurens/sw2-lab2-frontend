@@ -35,16 +35,17 @@
             >
               Nuevo Rol
             </router-link>
+            
             <router-view/>
-
-            <div class="row">
-              <h4 class="" v-if="isTeacher">Soy profesor</h4>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+              <h4 class="col-12 text-center text-primary mt-3 mb-5" 
+                v-if="isTeacher">Soy profesor
+              </h4>
+            </div>
   </div>
 </template>
 
