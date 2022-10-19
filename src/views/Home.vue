@@ -1,40 +1,50 @@
 <template>
-  <div class="container-fluid mt-2">
-    <h1>Laboratorio 2</h1>
-    <div class="row ">
-    <router-link
-    class="btn btn-primary m-2"
-    to="/mis-cursos"
-    >
-      Mis cursos
-    </router-link>
-    <router-link
-    v-if = "isTeacher"
-    class="btn btn-primary m-2"
-    :to = "{ name: 'create-course', params: {isTeacher:isTeacher} }"
-    >
-      Nuevo curso
-    </router-link>
-
-    <router-link
-    class="btn btn-success m-2"
-    to="/principal/roles"
-    >
-      Roles
-    </router-link>
-    <router-link
-    class="btn btn-warning m-2"
-    to="/principal/nuevo-rol"
-    >
-      Nuevo Rol
-    </router-link>
-    </div>
+  <div class="container-fluid">
     <div class="row">
-      <router-view></router-view>
-      <h4 class="" v-if="isTeacher">Soy profesor</h4>
+      <div class="col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
+        <div class="mt-5"> 
+          <div class="border border-primary rounded form-inline">
+            <h2 class="col-12 text-center text-primary mt-3 mb-5">
+              Laboratorio 2
+            </h2>
+            <router-link
+              class="btn btn-primary m-2"
+              to="/mis-cursos"
+            >
+              Mis cursos
+            </router-link>
 
+            <router-link
+              v-if = "isTeacher"
+              class="btn btn-primary m-2"
+              :to = "{ name: 'create-course', params: {isTeacher:isTeacher} }"
+            >
+              Nuevo curso
+            </router-link>
+
+            <router-link
+            class="btn btn-primary m-2"
+            to="/principal/roles"
+            >
+              Roles
+            </router-link>
+            
+            <router-link
+            class="btn btn-primary m-2"
+            to="/principal/nuevo-rol"
+            >
+              Nuevo Rol
+            </router-link>
+            <router-view/>
+
+            <div class="row">
+              <h4 class="" v-if="isTeacher">Soy profesor</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
 
